@@ -1,0 +1,24 @@
+[
+    {
+      "name": "Hotel Libertalia",
+      "location": "Belle Vue",
+      "image": "Images/Libertalia.jpg",
+      "price": "$80/night",
+      "description": "Seaside hotel with beautiful ocean view and traditional decor."
+    },
+    {
+      "name": "Lakana Hotel",
+      "location": "Andapanangoy",
+      "image": "Images/Lakana.jpg",
+      "price": "$60/night",
+      "description": "Located in the capital with city skyline view and modern rooms."
+    },
+    {
+      "name": "Ravoraha Ecolodge",
+      "location": "Ravoraha",
+      "image": "Images/Ravoraha.jpg",
+      "price": "$75/night",
+      "description": "Eco-friendly lodge with beachfront access and local cuisine."
+    }
+  ]
+  
