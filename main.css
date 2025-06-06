@@ -203,7 +203,7 @@
     color: rgb(51, 107, 228);
     font-size: 24px;
     font-weight: bold;
-    margin: 10px 0px;
+    padding: 10px 0px;
 }
 .place-description{
     color: rgb(61, 61, 61);
@@ -482,23 +482,27 @@ GALLERY
     bottom: 0;
     left: 0;
     right: 0;
-    height: 100px;
-    text-align: center;
+    height: 150px;
     background-color: rgb(51, 107, 228);
     margin-top: 50px;
 }
 .footer-contents{
+    width: 40%;
+    margin: auto;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     column-gap: 10px;
     align-items: center;
 }
+
 .phone-number, .whatsapp, .email-contact, .linkedin-contact{
     font-size: 16px;
     font-weight: bold;
     margin: 10px 5px;
     text-align: left;
-    margin-left: 190px;
+}
+.email-contact, .linkedin-contact{
+    text-align: right;
 }
 .footer-col img{
     width: 20px;
@@ -509,17 +513,17 @@ GALLERY
 .footer-col p{
     display: inline-block;
 }
+.footer-copy{
+    text-align: center;
+}
 .travel-t{
-    font-size: 24px;
-    font-weight: bold;
-    margin: 30px 0px;
+    font-size: 14px;
+    margin: 10px 0px;
 }
 .linkedin-contact img{
     border: 1px solid white;
 }
-.linkedin-contact a{
-    text-decoration: none;
-}
+
 
 
 
@@ -547,9 +551,7 @@ GALLERY
     .contact-section{
         width: 72.5%;
     }
-    .phone-number, .whatsapp, .email-contact, .linkedin-contact{
-        margin-left: 120px;
-    }
+   
 }
 
 @media (max-width:1200px) {
@@ -564,6 +566,9 @@ GALLERY
     }
     .hotels{
         grid-auto-columns: 48%;
+    }
+    .btn-book{
+        font-size: 18px;
     }
     .social-media{
         width: 80%;
@@ -583,6 +588,7 @@ GALLERY
     .travel-tip{
         width: 90%;
     }
+    
     .trip-p{
         font-size: 16px;
         line-height: 30px;
@@ -590,8 +596,8 @@ GALLERY
     .contact-section{
         width: 80%;
     }
-    .phone-number, .whatsapp, .email-contact, .linkedin-contact{
-        margin-left: 60px;
+    .footer-contents{
+        width: 55%;
     }
 }
 @media (max-width:850px) {
@@ -643,8 +649,11 @@ GALLERY
     .popular{
         width: 95%;
     }
+    .hotel-name{
+        font-size: 20px;
+    }
     .slide-places{
-        height: 320px;
+        height: 400px;
     }
     .slide-places img{
         height: 200px;
@@ -684,8 +693,10 @@ GALLERY
     .message textarea{
         height: 100px;
     }
+    .footer-contents{
+        width: 65%;
+       }
     .phone-number, .whatsapp, .email-contact, .linkedin-contact{
-        margin-left: 25px;
         font-size: 14px;
     }
     .footer-col img{
@@ -756,12 +767,25 @@ GALLERY
     .footer-contents{
         column-gap: 5px;
     }
+    .footer-contents{
+        width: 85%;
+       }
     .phone-number, .whatsapp, .email-contact, .linkedin-contact{
-        margin-left: 15px;
         font-size: 12px;
     }
     .footer-col img{
         width: 12px;
         height: 12px;
+    }
+    .travel-t{
+        font-size: 12px;
+    }
+}
+@media (max-width:400px) {
+    .footer-contents{
+        width: 95%;
+    }
+    .phone-number, .whatsapp, .email-contact, .linkedin-contact{
+        font-size: 10px;
     }
 }
