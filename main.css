@@ -8,14 +8,6 @@
     
 }
 
-/*
-    
-    
-    https://www.linkedin.com/in/willydabou/
-    
-*/
-
-
 
 /* -----------------------
         NAVBAR
@@ -155,11 +147,10 @@
 ----------------------------------------*/
 .popular{
     width: 80%;
-    height: 600px;
     text-align: center;
     margin: auto;
     margin-top: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
 }
 .popular-title{
     font-size: 30px;
@@ -173,21 +164,22 @@
     justify-content: center;
 }
 #back-btn, #next-btn{
-    width: 50px;
-    height: 50px;
+    width: 65px;
+    height: 15px;
     cursor: pointer;
-    margin: auto 10px;
 }
 #back-btn{
     margin-left: 0;
+    margin-right: 20px;
 }
 #next-btn{
     margin-right: 0;
+    margin-left: 20px;
 }
 .hotels{
     display: grid;
     grid-auto-flow: column;
-    grid-auto-columns: 32%;
+    grid-auto-columns: 30%;
     gap: 15px;
 }
 .slide-places{
@@ -220,7 +212,7 @@
 }
 .btn-book{
     padding: 5px 10px;
-    width: 25%;
+    width: 100px;
     margin: auto;
     margin-bottom: 10px;
     font-size: 24px;
@@ -433,38 +425,41 @@ GALLERY
 -------------------------------------------*/
 .contact-section{
     background-color: rgb(51, 107, 228);
-    width: 80%;
+    width: 70%;
     margin: auto;
     margin-bottom: 30px;
     border-radius: 5px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    padding: 2% 5%;
 }
 .details{
-    padding: 20px;
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
 .details input{
     font-size: 20px;
     padding: 7px 15px;
-    margin: 20px 30px;
+    margin: 20px 0px;
     border-radius: 4px;
     color: rgb(26, 25, 25);
     outline: none;
 }
-.message{
-    padding: 20px;
+#name, #email{
+    margin-right: 5%;
 }
 .message textarea{
-    width: 94%;
+    width: 100%;
     height: 150px;
     font-size: 20px;
     padding: 5px 10px;
+    margin: 20px 0px;
     border-radius: 5px;
     color: rgb(26, 25, 25);
     resize: none;
     outline: none;
-    
+    box-sizing: border-box;
 }
 .submit-btn{
     color: rgb(51, 107, 228);
@@ -476,7 +471,8 @@ GALLERY
 }
 .submit-btn:hover{
     cursor: pointer;
-    opacity: 0.9;
+    color: white;
+    background-color: rgb(99, 147, 250);
 }
 
 /*--------------------------------------------
@@ -549,7 +545,7 @@ GALLERY
         width: 82.5%;
     }
     .contact-section{
-        width: 82.5%;
+        width: 72.5%;
     }
     .phone-number, .whatsapp, .email-contact, .linkedin-contact{
         margin-left: 120px;
@@ -592,16 +588,16 @@ GALLERY
         line-height: 30px;
     }
     .contact-section{
-        width: 90%;
-    }
-    .details input{
-        margin: 15px;
+        width: 80%;
     }
     .phone-number, .whatsapp, .email-contact, .linkedin-contact{
         margin-left: 60px;
     }
 }
 @media (max-width:850px) {
+    .navbar{
+        grid-template-columns: 2fr 1fr;
+    }
     .menu-icon{
         display: block;
     }
@@ -636,7 +632,7 @@ GALLERY
         font-size: 18px;
     }
     .top-image-slider{
-        height: 600;
+        height: 500px;
     }
     .slide-title p{
         font-size: 20px;
@@ -647,13 +643,13 @@ GALLERY
     .popular{
         width: 95%;
     }
+    .slide-places{
+        height: 320px;
+    }
     .slide-places img{
-        height: 250px;
+        height: 200px;
     }
-    #back-btn, #next-btn{
-        width: 30px;
-        height: 30px;
-    }
+   
     .follow-title{
         font-size: 22px;
     }
@@ -669,14 +665,18 @@ GALLERY
         width: 94%;
     }
     .contact-section{
-        width: 94%;
+        width: 88%;
+        padding: 2% 3%;
     }
     .submit-btn{
-        padding: 10px 15px;
+        padding: 5px 10px;
         font-size: 20px;
     }
-    .details input{
-        margin: 10px 5px;
+    .details{
+        padding: 1% 6%;
+    }
+    .message{
+        padding: 1% 6%;
     }
     .details input, .message textarea{
         font-size: 16px;
@@ -701,21 +701,29 @@ GALLERY
         right: 25px;
     }
     .top-image-slider{
-        height: 350;
+        height: 350px;
     }
     .hotels{
-        grid-auto-columns: 75%;
+        grid-auto-columns: 85%;
+    }
+    .btn-book{
+        font-size: 16px;
+        padding: 5px 7px;
     }
     .top-image-slider{
         height: 500;
     }
     .icons{
-        width: 45px;
-        height: 45px;
+        width: 35px;
+        height: 35px;
+    }
+    .slide-places img{
+        height: 200px;
+        border-radius: 3px;
     }
     .icon-img{
-        width: 45px;
-        height: 45px;
+        width: 35px;
+        height: 35px;
     }
     .gallery{
         width: 97%;
@@ -737,7 +745,13 @@ GALLERY
         font-size: 20px;
     }
     .contact-section{
-        width: 95%;
+        width: 91%;
+    }
+    #name, #email{
+        margin-right: 0;
+    }
+    .details{
+        grid-template-columns: 1fr;
     }
     .footer-contents{
         column-gap: 5px;
