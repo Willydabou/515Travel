@@ -3,7 +3,7 @@
     padding: 0;
     color: white;
     font-family: sans-serif;
-    overflow-x: hidden;
+    
     scroll-behavior: smooth;
     
 }
@@ -12,371 +12,1676 @@
 /* -----------------------
         NAVBAR
 --------------------------*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    scroll-behavior: smooth;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+/* ---------------- NAVBAR ---------------- */
+
 .navbar{
     position: fixed;
     top: 0;
-    z-index: 1000;
-    background-color: rgb(51, 107, 228);
     width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
+    height: 85px;
+
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    height: 100px;
+
+    padding: 0 7%;
+
+    background: rgba(20, 60, 140, 0.85);
+    backdrop-filter: blur(10px);
+
+    z-index: 1000;
+
+    transition: 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
 }
 
-.left-side-nav, .right-side-nav{
-    display: flex;
-    flex-direction: row;
-    padding: 10px;
-    align-items: center;
-    justify-content: space-between;
-}
+/* ---------- LEFT ---------- */
+
 .left-side-nav{
-    margin-left: 180px;
-    justify-content: left;
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
-.right-side-nav{
-    margin-right: 180px;
-}
-.left-side-nav img, .left-side-nav p{
-    display: inline-block;
-}
+
 .logo-img{
-    width: 60px;
-    height: 60px;
-    border-radius: 4px;
+    width: 58px;
+    height: 58px;
+    border-radius: 12px;
+    object-fit: cover;
+    border: 2px solid white;
 }
-.left-side-nav p{
-    margin-left: 20px;
-    font-size: 26px;
+
+.agency-name{
+    color: white;
+    font-size: 1.7rem;
     font-weight: bold;
+    letter-spacing: 1px;
 }
+
+/* ---------- RIGHT ---------- */
+
+.right-side-nav{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+/* ---------- MENU ---------- */
 
 .nav-menu p{
-    font-size: 20px;
-    font-weight: bold;
-}
-.nav-menu p:hover{
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+
     cursor: pointer;
-    opacity: 0.75;
-}
-.menu-icon{
-    display: none;
-    position: absolute;
-    top: 35px;
-    right: 30px;
-    height: 30px;
-    width: 32px;
-    padding: 0;
-    border-radius: 4px;
-}
-.menu-icon:hover{
-    cursor: pointer;
-}
-.menu-icon img{
-    width: 30px;
-    height: 26px;
-    object-fit: cover;
-}
-.nav-menu select{
-    background-color: rgb(51, 107, 228);
-    width: 45px;
-    height: 20px;
-    border: 1px solid white;
-    border-radius: 4px;
-    outline: none;
-}
-.flag{
-    width: 30px;
-    height: 20px;
+    position: relative;
+
+    transition: 0.3s ease;
 }
 
- /* ----------------------------
-        Image Slide
---------------------------------- */
+/* underline animation */
+
+.nav-menu p::after{
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+
+    width: 0%;
+    height: 2px;
+
+    background-color: white;
+
+    transition: 0.3s ease;
+}
+
+.nav-menu p:hover::after{
+    width: 100%;
+}
+
+.nav-menu p:hover{
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+/* ---------- LANGUAGE ---------- */
+
+.language-box select{
+    background-color: transparent;
+    color: white;
+
+    border: 1px solid rgba(255,255,255,0.5);
+
+    padding: 7px 10px;
+
+    border-radius: 8px;
+
+    outline: none;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.language-box select:hover{
+    background-color: rgba(255,255,255,0.1);
+}
+
+.language-box option{
+    color: black;
+}
+
+/* ---------- MENU ICON ---------- */
+
+.menu-icon{
+    display: none;
+
+    color: white;
+    font-size: 2rem;
+
+    cursor: pointer;
+}
+
+/* ---------------- MOBILE ---------------- */
+
+@media(max-width: 992px){
+
+    .navbar{
+        padding: 0 5%;
+    }
+
+    .menu-icon{
+        display: block;
+        z-index: 2000;
+    }
+
+    .right-side-nav{
+
+        position: fixed;
+
+        top: 85px;
+        right: -100%;
+
+        width: 280px;
+        height: calc(100vh - 85px);
+
+        background: rgba(17, 44, 99, 0.98);
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding: 40px 30px;
+
+        gap: 30px;
+
+        transition: right 0.4s ease;
+
+        z-index: 1500;
+    }
+
+    .right-side-nav.active{
+        right: 0;
+    }
+
+    .nav-menu{
+        width: 100%;
+    }
+
+    .nav-menu p{
+        font-size: 1.1rem;
+    }
+}
+
+/* ---------------- SMALL MOBILE ---------------- */
+
+@media(max-width: 500px){
+
+    .agency-name{
+        font-size: 1.3rem;
+    }
+
+    .logo-img{
+        width: 50px;
+        height: 50px;
+    }
+
+    .right-side-nav{
+        width: 100%;
+    }
+}
+
+/* ---------------- HERO SLIDER ---------------- */
 
 .top-image-slider{
     position: relative;
+
     width: 100%;
-    height: 800px;
-    text-align: center;
+    height: 100vh;
+
     overflow: hidden;
-    border-bottom: 30px solid rgb(51, 107, 228);
+
+    border-bottom: 8px solid rgb(51, 107, 228);
 }
+
+/* ---------- SLIDES ---------- */
+
 .slide{
     position: absolute;
+
     width: 100%;
     height: 100%;
+
+    top: 0;
     left: 100%;
-    transition: left 1s ease;
-    object-fit:fill;
+
+    object-fit: cover;
+
+    transition: 1s ease-in-out;
 }
-.slide.hide{
-    left: -100%;
-}
+
+/* current slide */
+
 .slide.show{
     left: 0;
 }
 
-  
+/* previous slide */
+
+.slide.hide{
+    left: -100%;
+}
+
+/* ---------- OVERLAY ---------- */
+
+.overlay{
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    top: 0;
+    left: 0;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,0.45),
+        rgba(0,0,0,0.45)
+    );
+
+    z-index: 2;
+}
+
+/* ---------- CONTENT ---------- */
+
 .slide-title{
-    position: relative;
-    left: 0.75%;
-    top: 30%;
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 90%;
+    max-width: 900px;
+
+    text-align: center;
+
+    z-index: 3;
 }
-.slide-title p{
-    font-size: 30px;
-    font-weight: bold;
-    margin-right: 5px;
+
+/* ---------- TITLE ---------- */
+
+.slide-title h1{
+    color: white;
+
+    font-size: 4rem;
+    font-weight: 800;
+
+    line-height: 1.2;
+
+    margin-bottom: 20px;
+
+    text-shadow: 0 5px 15px rgba(0,0,0,0.4);
 }
+
+/* ---------- DESCRIPTION ---------- */
+
+.hero-description{
+    color: rgba(255,255,255,0.9);
+
+    font-size: 1.2rem;
+
+    line-height: 1.7;
+
+    margin-bottom: 35px;
+
+    text-shadow: 0 3px 10px rgba(0,0,0,0.4);
+}
+
+/* ---------- BUTTON ---------- */
+
 .btn{
-    background-color: rgb(51, 107, 228);
-    font-size: 20px;
-    padding: 10px 35px;
-    border-radius: 4px;
-    margin-top: 20px;
-    border: 1px solid rgb(64, 121, 245);
+    background: linear-gradient(
+        135deg,
+        rgb(51, 107, 228),
+        rgb(28, 78, 185)
+    );
+
+    color: white;
+
+    font-size: 1rem;
+    font-weight: 600;
+
+    border: none;
+
+    padding: 15px 40px;
+
+    border-radius: 50px;
+
     cursor: pointer;
-    box-shadow: 5px 5px 5px rgba(76, 77, 80, 0.5);
+
+    transition: 0.3s ease;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
 }
+
+/* button hover */
+
+.btn:hover{
+    transform: translateY(-4px) scale(1.03);
+
+    box-shadow: 0 14px 30px rgba(0,0,0,0.35);
+}
+
+/* ---------------- TABLET ---------------- */
+
+@media(max-width: 992px){
+
+    .slide-title h1{
+        font-size: 3rem;
+    }
+
+    .hero-description{
+        font-size: 1rem;
+    }
+}
+
+/* ---------------- MOBILE ---------------- */
+
+@media(max-width: 768px){
+
+    .top-image-slider{
+        height: 100vh;
+    }
+
+    .slide-title h1{
+        font-size: 2.2rem;
+    }
+
+    .hero-description{
+        font-size: 0.95rem;
+
+        line-height: 1.6;
+    }
+
+    .btn{
+        padding: 13px 30px;
+        font-size: 0.95rem;
+    }
+}
+
+/* ---------------- SMALL MOBILE ---------------- */
+
+@media(max-width: 480px){
+
+    .slide-title h1{
+        font-size: 1.8rem;
+    }
+
+    .hero-description{
+        font-size: 0.9rem;
+    }
+
+    .btn{
+        width: 100%;
+        max-width: 250px;
+    }
+}
+
+
+
+/* ---------------- POPULAR SECTION ---------------- */
+
+.popular{
+    width: 100%;
+
+    padding: 100px 7%;
+
+    background: #f7f9fc;
+}
+
+/* ---------- HEADER ---------- */
+
+.section-header{
+    text-align: center;
+
+    margin-bottom: 50px;
+}
+
+.popular-title{
+    font-size: 2.7rem;
+    font-weight: 800;
+
+    color: rgb(51, 107, 228);
+
+    margin-bottom: 15px;
+}
+
+.popular-subtitle{
+    color: #666;
+
+    font-size: 1.1rem;
+
+    max-width: 700px;
+
+    margin: auto;
+
+    line-height: 1.7;
+}
+
+/* ---------- WRAPPER ---------- */
+
+.places-wrap{
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+}
+
+/* ---------- HOTELS ---------- */
+
+.hotels{
+    display: grid;
+
+    grid-auto-flow: column;
+
+    grid-auto-columns: calc(33.33% - 15px);
+
+    gap: 25px;
+
+    overflow-x: auto;
+
+    scroll-behavior: smooth;
+
+    scrollbar-width: none;
+}
+
+.hotels::-webkit-scrollbar{
+    display: none;
+}
+
+/* ---------- CARD ---------- */
+
+.slide-places{
+    background: white;
+
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,0.08);
+
+    transition: 0.35s ease;
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* hover */
+
+.slide-places:hover{
+    transform: translateY(-10px);
+
+    box-shadow:
+    0 18px 40px rgba(0,0,0,0.15);
+}
+
+/* ---------- IMAGE ---------- */
+
+.slide-places img{
+    width: 100%;
+    height: 260px;
+
+    object-fit: cover;
+
+    transition: 0.4s ease;
+}
+
+.slide-places:hover img{
+    transform: scale(1.05);
+}
+
+/* ---------- CONTENT ---------- */
+
+.card-content{
+    padding: 25px;
+
+    display: flex;
+    flex-direction: column;
+
+    flex: 1;
+}
+
+/* ---------- HOTEL NAME ---------- */
+
+.hotel-name{
+    color: rgb(51, 107, 228);
+
+    font-size: 1.5rem;
+    font-weight: 700;
+
+    margin-bottom: 15px;
+}
+
+/* ---------- DESCRIPTION ---------- */
+
+.place-description{
+    color: #555;
+
+    font-size: 1rem;
+
+    line-height: 1.7;
+
+    margin-bottom: 25px;
+
+    flex: 1;
+}
+
+/* ---------- BUTTON ---------- */
+
+.btn-book{
+    width: fit-content;
+
+    padding: 12px 26px;
+
+    border-radius: 50px;
+
+    border: none;
+
+    font-size: 1rem;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+/* ---------- ARROWS ---------- */
+
+.arrow-btn{
+    min-width: 55px;
+    height: 55px;
+
+    border-radius: 50%;
+
+    border: none;
+
+    background: white;
+
+    font-size: 1.5rem;
+
+    color: rgb(51, 107, 228);
+
+    cursor: pointer;
+
+    box-shadow:
+    0 5px 20px rgba(0,0,0,0.1);
+
+    transition: 0.3s ease;
+}
+
+.arrow-btn:hover{
+    transform: scale(1.08);
+
+    background: rgb(51, 107, 228);
+
+    color: white;
+}
+
+/* ---------------- TABLET ---------------- */
+
+@media(max-width: 992px){
+
+    .hotels{
+        grid-auto-columns: calc(50% - 15px);
+    }
+
+    .popular-title{
+        font-size: 2.2rem;
+    }
+}
+
+/* ---------------- MOBILE ---------------- */
+
+@media(max-width: 768px){
+
+    .popular{
+        padding: 80px 5%;
+    }
+
+    .hotels{
+        grid-auto-columns: 100%;
+    }
+
+    .places-wrap{
+        gap: 12px;
+    }
+
+    .arrow-btn{
+        display: none;
+    }
+
+    .popular-title{
+        font-size: 1.9rem;
+    }
+
+    .popular-subtitle{
+        font-size: 1rem;
+    }
+}
+
+/* ---------------- SMALL MOBILE ---------------- */
+
+@media(max-width: 480px){
+
+    .slide-places img{
+        height: 220px;
+    }
+
+    .card-content{
+        padding: 20px;
+    }
+
+    .hotel-name{
+        font-size: 1.3rem;
+    }
+}
+
+
+
+/* ---------------- SOCIAL MEDIA SECTION ---------------- */
+
+.social-media{
+
+    width: 100%;
+
+    padding: 90px 7%;
+
+    background:
+    linear-gradient(
+        135deg,
+        rgb(51, 107, 228),
+        rgb(24, 66, 160)
+    );
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+/* ---------- CONTENT ---------- */
+
+.social-content{
+
+    max-width: 850px;
+
+    margin: auto;
+
+    text-align: center;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+/* ---------- TITLE ---------- */
+
+.follow-title{
+
+    color: white;
+
+    font-size: 2.7rem;
+    font-weight: 800;
+
+    margin-bottom: 18px;
+
+    letter-spacing: 1px;
+}
+
+/* ---------- DESCRIPTION ---------- */
+
+.follow-description{
+
+    color: rgba(255,255,255,0.88);
+
+    font-size: 1.1rem;
+
+    line-height: 1.8;
+
+    max-width: 650px;
+
+    margin: auto auto 40px auto;
+}
+
+/* ---------- ICON CONTAINER ---------- */
+
+.social-media-icons{
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 25px;
+
+    flex-wrap: wrap;
+}
+
+/* ---------- ICON CARD ---------- */
+
+.icons{
+
+    width: 72px;
+    height: 72px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(255,255,255,0.12);
+
+    border: 1px solid rgba(255,255,255,0.2);
+
+    border-radius: 20px;
+
+    backdrop-filter: blur(10px);
+
+    transition: 0.35s ease;
+
+    text-decoration: none;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* hover effect */
+
+.icons:hover{
+
+    transform:
+    translateY(-8px)
+    scale(1.05);
+
+    background: rgba(255,255,255,0.2);
+
+    box-shadow:
+    0 18px 35px rgba(0,0,0,0.25);
+}
+
+/* ---------- IMAGE ---------- */
+
+.icon-img{
+
+    width: 34px;
+    height: 34px;
+
+    object-fit: contain;
+
+    transition: 0.3s ease;
+}
+
+.icons:hover .icon-img{
+    transform: scale(1.12);
+}
+
+/* ---------------- TABLET ---------------- */
+
+@media(max-width: 992px){
+
+    .follow-title{
+        font-size: 2.2rem;
+    }
+}
+
+/* ---------------- MOBILE ---------------- */
+
+@media(max-width: 768px){
+
+    .social-media{
+        padding: 75px 5%;
+    }
+
+    .follow-title{
+        font-size: 1.9rem;
+    }
+
+    .follow-description{
+        font-size: 1rem;
+    }
+
+    .social-media-icons{
+        gap: 18px;
+    }
+
+    .icons{
+        width: 65px;
+        height: 65px;
+    }
+}
+
+/* ---------------- SMALL MOBILE ---------------- */
+
+@media(max-width: 480px){
+
+    .follow-title{
+        font-size: 1.6rem;
+    }
+
+    .follow-description{
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+
+    .icons{
+        width: 58px;
+        height: 58px;
+    }
+
+    .icon-img{
+        width: 28px;
+        height: 28px;
+    }
+}
+
+
+
+/* ================= GALLERY SECTION ================= */
+
+.gallery-section{
+
+    width: 100%;
+
+    padding: 100px 7%;
+
+    background: #ffffff;
+}
+
+/* ---------- HEADER ---------- */
+
+.gallery-header{
+
+    text-align: center;
+
+    margin-bottom: 50px;
+}
+
+.gallery-title{
+
+    font-size: 2.7rem;
+    font-weight: 800;
+
+    color: rgb(51, 107, 228);
+
+    margin-bottom: 15px;
+}
+
+.gallery-subtitle{
+
+    max-width: 700px;
+
+    margin: auto;
+
+    font-size: 1.1rem;
+
+    color: #666;
+
+    line-height: 1.8;
+}
+
+/* ================= GALLERY GRID ================= */
+
+.gallery{
+
+    display: grid;
+
+    grid-template-columns:
+    repeat(auto-fit, minmax(260px, 1fr));
+
+    gap: 22px;
+}
+
+/* ---------- CARD ---------- */
+
+.img-gallery{
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 22px;
+
+    cursor: pointer;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,0.08);
+
+    transition: 0.35s ease;
+}
+
+/* hover */
+
+.img-gallery:hover{
+
+    transform: translateY(-8px);
+
+    box-shadow:
+    0 20px 40px rgba(0,0,0,0.15);
+}
+
+/* ---------- IMAGE ---------- */
+
+.img-gallery img{
+
+    width: 100%;
+    height: 320px;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: 0.5s ease;
+}
+
+/* zoom effect */
+
+.img-gallery:hover img{
+    transform: scale(1.08);
+}
+
+/* ---------- OVERLAY ---------- */
+
+.img-gallery::before{
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,0),
+        rgba(0,0,0,0.3)
+    );
+
+    opacity: 0;
+
+    transition: 0.4s ease;
+
+    z-index: 1;
+}
+
+.img-gallery:hover::before{
+    opacity: 1;
+}
+
+/* ================= FULLSCREEN LIGHTBOX ================= */
+
+.fullBox{
+
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0,0,0,0.92);
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 5000;
+
+    backdrop-filter: blur(6px);
+
+    animation: fadeIn 0.3s ease;
+}
+
+/* ---------- IMAGE ---------- */
+
+.fullBox img{
+
+    max-width: 90%;
+    max-height: 88%;
+
+    border-radius: 16px;
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,0.5);
+
+    animation: zoomIn 0.35s ease;
+}
+
+/* ---------- CLOSE ---------- */
+
+.fullBox .close{
+
+    position: absolute;
+
+    top: 25px;
+    right: 35px;
+
+    font-size: 3rem;
+
+    color: white;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+
+    z-index: 6000;
+}
+
+.fullBox .close:hover{
+
+    transform: rotate(90deg);
+
+    color: rgb(51, 107, 228);
+}
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes fadeIn{
+
+    from{
+        opacity: 0;
+    }
+
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes zoomIn{
+
+    from{
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    to{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* ================= TABLET ================= */
+
+@media(max-width: 992px){
+
+    .gallery-title{
+        font-size: 2.2rem;
+    }
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width: 768px){
+
+    .gallery-section{
+        padding: 80px 5%;
+    }
+
+    .gallery-title{
+        font-size: 1.9rem;
+    }
+
+    .gallery-subtitle{
+        font-size: 1rem;
+    }
+
+    .gallery{
+        gap: 18px;
+    }
+
+    .img-gallery img{
+        height: 260px;
+    }
+}
+
+/* ================= SMALL MOBILE ================= */
+
+@media(max-width: 480px){
+
+    .gallery-title{
+        font-size: 1.6rem;
+    }
+
+    .gallery-subtitle{
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+
+    .img-gallery img{
+        height: 220px;
+    }
+
+    .fullBox .close{
+        top: 18px;
+        right: 20px;
+
+        font-size: 2.5rem;
+    }
+}
+
+
+
+/* ================= REVIEW SECTION ================= */
+
+.cust-review{
+
+    width: 100%;
+
+    padding: 100px 7%;
+
+    background:
+    linear-gradient(
+        to bottom,
+        #f8fbff,
+        #edf4ff
+    );
+}
+
+/* ---------- HEADER ---------- */
+
+.review-header{
+
+    text-align: center;
+
+    margin-bottom: 60px;
+}
+
+.review-title{
+
+    font-size: 2.7rem;
+    font-weight: 800;
+
+    color: rgb(51, 107, 228);
+
+    margin-bottom: 18px;
+}
+
+.review-subtitle{
+
+    max-width: 700px;
+
+    margin: auto;
+
+    font-size: 1.1rem;
+
+    line-height: 1.8;
+
+    color: #666;
+}
+
+/* ================= CONTAINER ================= */
+
+.review-container{
+
+    display: grid;
+
+    grid-template-columns:
+    repeat(3, 1fr);
+
+    gap: 30px;
+}
+
+/* ================= CARD ================= */
+
+.review{
+
+    background: white;
+
+    border-radius: 24px;
+
+    padding: 35px 30px;
+
+    box-shadow:
+    0 10px 35px rgba(0,0,0,0.08);
+
+    transition: 0.35s ease;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+/* hover */
+
+.review:hover{
+
+    transform: translateY(-10px);
+
+    box-shadow:
+    0 18px 45px rgba(0,0,0,0.15);
+}
+
+/* ================= TOP ================= */
+
+.review-top{
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 25px;
+}
+
+/* ---------- PROFILE ---------- */
+
+.customer-profile{
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+/* ---------- CUSTOMER IMAGE ---------- */
+
+.img-customer{
+
+    width: 60px;
+    height: 60px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    border: 3px solid rgb(51, 107, 228);
+
+    background: white;
+}
+
+/* ---------- NAME ---------- */
+
+.customer-name{
+
+    color: #222;
+
+    font-size: 1.15rem;
+    font-weight: 700;
+
+    margin-bottom: 4px;
+}
+
+/* ---------- ROLE ---------- */
+
+.customer-role{
+
+    color: rgb(51, 107, 228);
+
+    font-size: 0.9rem;
+
+    font-weight: 600;
+}
+
+/* ---------- QUOTE ---------- */
+
+.quote-icon{
+
+    font-size: 4rem;
+
+    color: rgba(51, 107, 228, 0.15);
+
+    line-height: 1;
+}
+
+/* ================= REVIEW TEXT ================= */
+
+.review-paragraph{
+
+    color: #555;
+
+    font-size: 1rem;
+
+    line-height: 1.9;
+
+    text-align: left;
+}
+
+/* ================= TABLET ================= */
+
+@media(max-width: 992px){
+
+    .review-container{
+
+        grid-template-columns:
+        repeat(2, 1fr);
+    }
+
+    .review-title{
+        font-size: 2.2rem;
+    }
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width: 768px){
+
+    .cust-review{
+        padding: 80px 5%;
+    }
+
+    .review-container{
+
+        grid-template-columns: 1fr;
+    }
+
+    .review-title{
+        font-size: 1.9rem;
+    }
+
+    .review-subtitle{
+        font-size: 1rem;
+    }
+
+    .review{
+        padding: 30px 24px;
+    }
+}
+
+/* ================= SMALL MOBILE ================= */
+
+@media(max-width: 480px){
+
+    .review-title{
+        font-size: 1.6rem;
+    }
+
+    .review-subtitle{
+        font-size: 0.95rem;
+    }
+
+    .img-customer{
+
+        width: 52px;
+        height: 52px;
+    }
+
+    .quote-icon{
+        font-size: 3rem;
+    }
+}
+
+
+
+/* ================= TRAVEL TIPS SECTION ================= */
+
+.travel-tip{
+
+    width: 100%;
+
+    padding: 100px 7%;
+
+    background:
+    linear-gradient(
+        to bottom,
+        #ffffff,
+        #f5f9ff
+    );
+}
+
+/* ---------- HEADER ---------- */
+
+.tips-header{
+
+    text-align: center;
+
+    margin-bottom: 70px;
+}
+
+.tips-title{
+
+    font-size: 2.7rem;
+    font-weight: 800;
+
+    color: rgb(51, 107, 228);
+
+    margin-bottom: 18px;
+}
+
+.tips-subtitle{
+
+    max-width: 700px;
+
+    margin: auto;
+
+    font-size: 1.1rem;
+
+    line-height: 1.8;
+
+    color: #666;
+}
+
+/* ================= TIP CARD ================= */
+
+.tips{
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 40px;
+
+    margin-bottom: 60px;
+
+    background: white;
+
+    border-radius: 28px;
+
+    overflow: hidden;
+
+    box-shadow:
+    0 12px 35px rgba(0,0,0,0.08);
+
+    transition: 0.35s ease;
+}
+
+/* hover */
+
+.tips:hover{
+
+    transform: translateY(-8px);
+
+    box-shadow:
+    0 20px 45px rgba(0,0,0,0.15);
+}
+
+/* reverse layout */
+
+.reverse{
+    flex-direction: row-reverse;
+}
+
+/* ================= IMAGE ================= */
+
+.tips-image-box{
+
+    flex: 1;
+
+    overflow: hidden;
+}
+
+.tips-img{
+
+    width: 100%;
+    height: 100%;
+
+    min-height: 420px;
+
+    object-fit: cover;
+
+    transition: 0.5s ease;
+}
+
+/* zoom hover */
+
+.tips:hover .tips-img{
+    transform: scale(1.06);
+}
+
+/* ================= TEXT ================= */
+
+.tips-text{
+
+    flex: 1;
+
+    padding: 50px;
+}
+
+/* ---------- BADGE ---------- */
+
+.tips-badge{
+
+    display: inline-block;
+
+    padding: 8px 18px;
+
+    border-radius: 50px;
+
+    background:
+    rgba(51, 107, 228, 0.1);
+
+    color: rgb(51, 107, 228);
+
+    font-size: 0.9rem;
+    font-weight: 700;
+
+    margin-bottom: 25px;
+}
+
+/* ---------- PARAGRAPH ---------- */
+
+.trip-p{
+
+    color: #555;
+
+    font-size: 1.05rem;
+
+    line-height: 2;
+
+    text-align: left;
+}
+
+/* ================= TABLET ================= */
+
+@media(max-width: 992px){
+
+    .tips{
+
+        flex-direction: column;
+    }
+
+    .reverse{
+        flex-direction: column;
+    }
+
+    .tips-title{
+        font-size: 2.2rem;
+    }
+
+    .tips-img{
+        min-height: 320px;
+    }
+
+    .tips-text{
+        padding: 40px;
+    }
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width: 768px){
+
+    .travel-tip{
+        padding: 80px 5%;
+    }
+
+    .tips-header{
+        margin-bottom: 50px;
+    }
+
+    .tips-title{
+        font-size: 1.9rem;
+    }
+
+    .tips-subtitle{
+        font-size: 1rem;
+    }
+
+    .tips{
+        gap: 0;
+        margin-bottom: 40px;
+    }
+
+    .tips-text{
+        padding: 30px 25px;
+    }
+
+    .trip-p{
+        font-size: 1rem;
+        line-height: 1.9;
+    }
+
+    .tips-img{
+        min-height: 260px;
+    }
+}
+
+/* ================= SMALL MOBILE ================= */
+
+@media(max-width: 480px){
+
+    .tips-title{
+        font-size: 1.6rem;
+    }
+
+    .tips-subtitle{
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+
+    .tips-text{
+        padding: 25px 20px;
+    }
+
+    .trip-p{
+        font-size: 0.95rem;
+    }
+
+    .tips-img{
+        min-height: 220px;
+    }
+}
+
+/* ========================================================================== 
+=============================================================================*/
+ 
 
 
 
 /*---------------------------------------
         Popular Places
 ----------------------------------------*/
-.popular{
-    width: 80%;
-    text-align: center;
-    margin: auto;
-    margin-top: 30px;
-    margin-bottom: 50px;
-}
-.popular-title{
-    font-size: 30px;
-    font-weight: bold;
-    color: rgb(51, 107, 228);
-    margin:20px 0px;
-}
-.places-wrap{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-#back-btn, #next-btn{
-    width: 65px;
-    height: 15px;
-    cursor: pointer;
-}
-#back-btn{
-    margin-left: 0;
-    margin-right: 20px;
-}
-#next-btn{
-    margin-right: 0;
-    margin-left: 20px;
-}
-.hotels{
-    display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: 30%;
-    gap: 15px;
-}
-.slide-places{
-    background-color: rgb(231, 233, 233);
-    height: 480px;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    border-radius: 5px;
-    box-shadow: 5px 5px 5px rgba(192, 190, 190, 0.3);
-}
-.slide-places:hover{
-    transform: translateY(-5px);
-    opacity: 0.8;
-}
-.slide-places img{
-    height: 300px;
-    border-radius: 3px;
-}
-.hotel-name{
-    color: rgb(51, 107, 228);
-    font-size: 24px;
-    font-weight: bold;
-    padding: 10px 0px;
-}
-.place-description{
-    color: rgb(61, 61, 61);
-    font-size: 20px;
-    margin: 15px 5px;
-}
-.btn-book{
-    padding: 5px 10px;
-    width: 100px;
-    margin: auto;
-    margin-bottom: 10px;
-    font-size: 24px;
-    border: none;
-    border-radius: 4px;
-    background-color: rgb(51, 107, 228);
-    cursor: pointer;
-}
-
 
 
 /*---------------------------------------
         SOCIAL MEDIA
 ----------------------------------------*/
-.social-media{
-    background-color: rgb(51, 107, 228);
-    width: 75%;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    padding: 20px 50px;
-    border-radius: 5px;
-    margin-bottom: 30px;
-    margin-top: 20px;
-}
-.follow-title{
-    font-size: 26px;
-    font-weight: bold;
-    margin: 4px;
-}
-.follow-description{
-    text-align: center;
-    font-size: 20px;
-    margin-bottom: 4px;
-}
-.social-media-icons{
-    display: flex;
-    flex-direction: row;
-    margin-left: auto;
-    margin-right: auto;
-}
-.icons{
-    width: 65px;
-    height: 65px;
-    margin: 10px;
-    border-radius: 7px;
-    border: 1px solid lightgray;
-    cursor: pointer;
-    overflow: hidden;
-}
-.icons:hover{
-    border: 1px solid rgb(50, 188, 230);
-    transform: translateY(3px);
-}
-.icon-img{
-    width: 65px;
-    height: 65px;
-    object-fit: cover;
-}
 
 
 
 /* -------------------------------------
 GALLERY
 ---------------------------------------*/
-.gallery{
-    width: 81%;
-    margin: auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr ;
-    justify-content: center;
-    margin-top: 50px;
-}
-.img-gallery{
-    padding: 4px;
-    text-align: center;
-    margin: 5px;
-}
-.img-gallery img{
-    object-fit: contain;
-    height: 340px;
-}
-.img-gallery img:hover{
-    cursor: pointer;
-    opacity: 0.8;
-}
-
-
-/*  GALLERY FULL SCREEN*/
-.fullBox {
-    display: none;
-    position: fixed;
-    z-index: 999;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .fullBox img {
-    max-width: 90%;
-    max-height: 90%;
-  }
-  
-  .fullBox .close {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    font-size: 40px;
-    color: white;
-    cursor: pointer;
-  }
-
 
 
 
   /*-------------------------------------
         CUSTOMER REVIEW
   ---------------------------------------*/
-  .cust-review{
-    width: 80%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    text-align: center;
-    justify-content: center;
-    margin: auto;
-    margin-top: 30px;
-    padding: 40px 0px;
-    background:linear-gradient(white 60%, rgb(12, 133, 233) 80%);
-  }
-  .review{
-    background-color: rgb(253, 251, 251);
-    box-shadow: 10px 10px 10px rgba(129, 129, 129, 0.3);
-    border: 1px solid rgb(248, 248, 248);
-    border-radius: 5px;
-    height: 350px;
-    margin: 20px;
-    padding: 25px 20px;
-    transition: transform 0.3s;
-  }
-  .review:hover{
-    background-color: rgb(221, 220, 220);
-    transform: translateY(-7px);
-  }
-  .review p{
-    margin: 10px 0px;
-    color: rgb(54, 54, 54);
-    font-size: 26px;
-    font-weight: bold;
-  }
-  
-  .img-customer{
-    width: 40px;
-    height: 40px;
-    margin-left: 5px;
-  }
-  .review-paragraph{
-    text-align: left;
-    line-height: 35px;
-    color: black;
-    font-size: 20px;
-  }
 
  
 
@@ -384,46 +1689,13 @@ GALLERY
   /*---------------------------------------
         TRAVEL TIPS
   -----------------------------------------*/
-  .travel-tip{
-    width: 80%;
-    margin: auto;
-    margin-top: 40px;
-    margin-bottom: 40px;
-  }
   
-  .tips{
-    height: 350px;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    display: flex;
-    flex-direction: row;
-    border-radius: 10px;
-    box-shadow: 10px 10px 10px rgba(129, 129, 129, 0.3);
-  }
-  .tips img{
-    display: inline-block;
-    width: 50%;
-    object-fit: cover;
-  }
-  .tips-text{
-    text-align: center;
-    background-color: rgb(240, 237, 237);
-    width: 50%;
-    padding: 20px 40px;
-  }
-  .tips-text p{
-    color: black;
-  }
-  .trip-p{
-    font-size: 20px;
-    line-height: 35px;
-  }
 
 
 /*------------------------------------------
     CONTACT SECTION
 -------------------------------------------*/
-.contact-section{
+/*.contact-section{
     background-color: rgb(51, 107, 228);
     width: 70%;
     margin: auto;

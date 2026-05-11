@@ -9,188 +9,412 @@
 </head>
 <body>
     
-        <div class="navbar">
-            <div class="left-side-nav">
-                <img src="Images/WD-Logo.jpg" loading="lazy" class="logo-img">
-                <p class="agency-name">515 Travel</p>
-            </div>
-            <div class="right-side-nav">
-                <div class="nav-menu" onclick="scrollToSection('top-image-slider')">
-                    <p id="home"></p>
-                </div>
-                <div class="nav-menu" onclick="scrollToSection('popular')">
-                    <p id="popular"></p>
-                </div>
-                <div class="nav-menu" onclick="scrollToSection('gallery')">
-                    <p id="gallery"></p>
-                </div>
-                <div class="nav-menu" onclick="scrollToSection('cust-review')">
-                    <p id="review"></p>
-                </div>
-                <div class="nav-menu" onclick="scrollToSection('travel-tip')">
-                    <p id="tip"></p>
-                </div>
-                <div class="nav-menu" onclick="scrollToSection('contact-section')">
-                    <p id="contact"></p>
-                </div>
-                <div class="nav-menu">
-                    <select id="language">
-                        <option value="en">En</option>
-                        <option value="fr">Fr</option>
-                    </select>
-                </div>
-            </div>
-            <div class="menu-icon" onclick="navMenuShow()">
-                <img src="Images/menu.png" loading="lazy" >
-            </div>
+    <div class="navbar">
+
+        <div class="left-side-nav">
+            <img src="Images/WD-Logo.jpg" loading="lazy" class="logo-img">
+            <p class="agency-name">515 Travel</p>
         </div>
     
-        <div class="top-image-slider">
-            <img src="Images/Beach01.jpg" class="slide show" id="img-1">
-            <img src="Images/Beach_forest.jpg" class="slide hide" id="img-2">
-            <div class="slide-title">
-                <p id="title"></p>
-                <button class="btn" onclick="scrollToSection('contact-section')"></button>            </div>     
+        <div class="right-side-nav" id="mobileMenu">
+    
+            <div class="nav-menu" onclick="scrollToSection('top-image-slider')">
+                <p id="home"></p>
+            </div>
+    
+            <div class="nav-menu" onclick="scrollToSection('popular')">
+                <p id="popular"></p>
+            </div>
+    
+            <div class="nav-menu" onclick="scrollToSection('gallery')">
+                <p id="gallery"></p>
+            </div>
+    
+            <div class="nav-menu" onclick="scrollToSection('cust-review')">
+                <p id="review"></p>
+            </div>
+    
+            <div class="nav-menu" onclick="scrollToSection('travel-tip')">
+                <p id="tip"></p>
+            </div>
+    
+            <div class="nav-menu" onclick="scrollToSection('contact-section')">
+                <p id="contact"></p>
+            </div>
+    
+            <div class="nav-menu language-box">
+                <select id="language">
+                    <option value="en">EN</option>
+                    <option value="fr">FR</option>
+                </select>
+            </div>
+    
         </div>
+    
+        <div class="menu-icon" onclick="navMenuShow()">
+            ☰
+        </div>
+    
+    </div>
+    
+    <div class="top-image-slider">
+
+        <img src="Images/Beach01.jpg" class="slide show" id="img-1">
+        <img src="Images/Beach_forest.jpg" class="slide hide" id="img-2">
+    
+        <!-- DARK OVERLAY -->
+        <div class="overlay"></div>
+    
+        <!-- CONTENT -->
+        <div class="slide-title">
+    
+            <h1 id="title"></h1>
+    
+            <p class="hero-description">
+                Discover paradise beaches, unforgettable adventures,
+                and authentic experiences in Sainte-Marie.
+            </p>
+    
+            <button class="btn" onclick="scrollToSection('contact-section')">
+                Book Now
+            </button>
+    
+        </div>
+    
+    </div>
     
 
-        <div class="popular">
+    <div class="popular">
+
+        <div class="section-header">
             <p class="popular-title">POPULAR PLACES</p>
-            <div class="places-wrap">
-                <img src="Images/left-arrow.png" loading="lazy"  id="back-btn">
-                <div class="hotels">
-                    <div class="slide-places">
-                      <img src="Images/Beach_forest.jpg" loading="lazy" >
-                      <h3 class="hotel-name">Hotel A</h3>
-                      <p id="h-name-a" class="place-description"></p>
-                      <button class="btn-book btn"></button>
-                    </div>
-              
-                    <div class="slide-places">
-                      <img src="Images/Beach01.jpg" loading="lazy" >
-                      <h3 class="hotel-name">Hotel B</h3>
-                      <p id="h-name-b" class="place-description"></p>
-                      <button class="btn-book btn btn"></button>
-                    </div>
-              
-                    <div class="slide-places">
-                      <img src="Images/Beach02.jpg" loading="lazy" >
-                      <h3 class="hotel-name">Hotel C</h3>
-                      <p id="h-name-c" class="place-description"></p>
-                      <button class="btn-book btn"></button>
-                    </div>
+            <p class="popular-subtitle">
+                Explore the most beautiful hotels and destinations in Sainte-Marie.
+            </p>
+        </div>
     
-                    <div class="slide-places">
-                        <img src="Images/South View SM.jpg" loading="lazy" >
+        <div class="places-wrap">
+    
+            <button class="arrow-btn" id="back-btn">
+                ❮
+            </button>
+    
+            <div class="hotels">
+    
+                <div class="slide-places">
+                    <img src="Images/Beach_forest.jpg" loading="lazy">
+    
+                    <div class="card-content">
+                        <h3 class="hotel-name">Hotel A</h3>
+                        <p id="h-name-a" class="place-description"></p>
+                        <button class="btn-book btn"></button>
+                    </div>
+                </div>
+    
+                <div class="slide-places">
+                    <img src="Images/Beach01.jpg" loading="lazy">
+    
+                    <div class="card-content">
+                        <h3 class="hotel-name">Hotel B</h3>
+                        <p id="h-name-b" class="place-description"></p>
+                        <button class="btn-book btn"></button>
+                    </div>
+                </div>
+    
+                <div class="slide-places">
+                    <img src="Images/Beach02.jpg" loading="lazy">
+    
+                    <div class="card-content">
+                        <h3 class="hotel-name">Hotel C</h3>
+                        <p id="h-name-c" class="place-description"></p>
+                        <button class="btn-book btn"></button>
+                    </div>
+                </div>
+    
+                <div class="slide-places">
+                    <img src="Images/South View SM.jpg" loading="lazy">
+    
+                    <div class="card-content">
                         <h3 class="hotel-name">Hotel D</h3>
                         <p id="h-name-d" class="place-description"></p>
                         <button class="btn-book btn"></button>
                     </div>
-                
-                    <div class="slide-places">
-                        <img src="Images/BestView.jpg" loading="lazy" >
+                </div>
+    
+                <div class="slide-places">
+                    <img src="Images/BestView.jpg" loading="lazy">
+    
+                    <div class="card-content">
                         <h3 class="hotel-name">Hotel E</h3>
                         <p id="h-name-e" class="place-description"></p>
                         <button class="btn-book btn"></button>
                     </div>
-                    <div class="slide-places">
-                        <img src="Images/ISM.jpg" loading="lazy" >
+                </div>
+    
+                <div class="slide-places">
+                    <img src="Images/ISM.jpg" loading="lazy">
+    
+                    <div class="card-content">
                         <h3 class="hotel-name">Hotel F</h3>
                         <p id="h-name-f" class="place-description"></p>
                         <button class="btn-book btn"></button>
-                      </div>
-                      <div class="slide-places">
-                        <img src="Images/SM01.jpg" loading="lazy" >
-                        <h3  class="hotel-name">Hotel G</h3>
-                        <p id="h-name-g" class="place-description"></p>
-                        <button class="btn-book btn"></button>
                     </div>
-                
-                    <div class="slide-places">
-                        <img src="Images/SM02.jpg" loading="lazy">
-                        <h3  class="hotel-name">Hotel H</h3>
-                        <p id="h-name-h" class="place-description"></p>
-                        <button class="btn-book btn"></button>
-                    </div>
-                    <div class="slide-places">
-                        <img src="Images/SM03.jpg" loading="lazy" >
-                        <h3  class="hotel-name">Hotel I</h3>
-                        <p id="h-name-i" class="place-description"></p>
-                        <button class="btn-book btn"></button>
-                      </div>
                 </div>
-                <img src="Images/right-arrow.png" loading="lazy"  id="next-btn">
+    
             </div>
-            
+    
+            <button class="arrow-btn" id="next-btn">
+                ❯
+            </button>
+    
         </div>
+    
+    </div>
           
           
 
-        <div class="social-media">
+    <div class="social-media">
+
+        <div class="social-content">
+    
             <p class="follow-title"></p>
+    
             <p class="follow-description"></p>
+    
             <div class="social-media-icons">
-                <div class="icons">
-                    <a href="https://www.facebook.com/profile.php?id=100006233749208">
-                        <img src="Images/Facebook.png" loading="lazy"  class="icon-img">
-                    </a>
+    
+                <a href="https://www.facebook.com/profile.php?id=100006233749208" target="_blank" class="icons">
+                    <img src="Images/Facebook.png" loading="lazy" class="icon-img">
+                </a>
+    
+                <a href="https://x.com/willydabou" target="_blank" class="icons">
+                    <img src="Images/X-Logo.png" loading="lazy" class="icon-img">
+                </a>
+    
+                <a href="https://www.instagram.com/d_____willy/" target="_blank" class="icons">
+                    <img src="Images/Instagram.png" loading="lazy" class="icon-img">
+                </a>
+    
+            </div>
+    
+        </div>
+    
+    </div>
+
+
+
+        <!-- ================= GALLERY ================= -->
+
+<section class="gallery-section">
+
+    <div class="gallery-header">
+
+        <h2 class="gallery-title">
+            Travel Gallery
+        </h2>
+
+        <p class="gallery-subtitle">
+            Explore breathtaking landscapes, paradise beaches,
+            and unforgettable moments from Sainte-Marie.
+        </p>
+
+    </div>
+
+    <div class="gallery"></div>
+
+</section>
+
+<!-- ================= FULLSCREEN ================= -->
+
+<div id="fullBox" class="fullBox">
+
+    <span class="close">&times;</span>
+
+    <img id="fullBox-img" src="" alt="Full-size">
+
+</div>
+
+
+<section class="cust-review">
+
+    <div class="review-header">
+
+        <h2 class="review-title">
+            What Our Travelers Say
+        </h2>
+
+        <p class="review-subtitle">
+            Discover unforgettable experiences shared by travelers
+            who explored Sainte-Marie with 515 Travel.
+        </p>
+
+    </div>
+
+    <div class="review-container">
+
+        <!-- REVIEW 1 -->
+
+        <div class="review">
+
+            <div class="review-top">
+
+                <div class="customer-profile">
+
+                    <img src="Images/Facebook.png"
+                    loading="lazy"
+                    class="img-customer">
+
+                    <div>
+                        <p class="customer-name">
+                            Customer A
+                        </p>
+
+                        <span class="customer-role">
+                            Traveler
+                        </span>
+                    </div>
+
                 </div>
-                <div class="icons">
-                    <a href="https://x.com/willydabou">
-                        <img src="Images/twitter.png" loading="lazy"  class="icon-img">
-                    </a>
+
+                <span class="quote-icon">“</span>
+
+            </div>
+
+            <div id="review-a" class="review-paragraph"></div>
+
+        </div>
+
+        <!-- REVIEW 2 -->
+
+        <div class="review">
+
+            <div class="review-top">
+
+                <div class="customer-profile">
+
+                    <img src="Images/Instagram.png"
+                    loading="lazy"
+                    class="img-customer">
+
+                    <div>
+                        <p class="customer-name">
+                            Customer B
+                        </p>
+
+                        <span class="customer-role">
+                            Honeymoon Traveler
+                        </span>
+                    </div>
+
                 </div>
-                <div class="icons">
-                    <a href="https://www.instagram.com/d_____willy/">
-                        <img src="Images/Instagram.png" loading="lazy"  class="icon-img">
-                    </a>
+
+                <span class="quote-icon">“</span>
+
+            </div>
+
+            <div id="review-b" class="review-paragraph"></div>
+
+        </div>
+
+        <!-- REVIEW 3 -->
+
+        <div class="review">
+
+            <div class="review-top">
+
+                <div class="customer-profile">
+
+                    <img src="Images/X-Logo.png"
+                    loading="lazy"
+                    class="img-customer">
+
+                    <div>
+                        <p class="customer-name">
+                            Customer C
+                        </p>
+
+                        <span class="customer-role">
+                            Explorer
+                        </span>
+                    </div>
+
                 </div>
+
+                <span class="quote-icon">“</span>
+
             </div>
+
+            <div id="review-c" class="review-paragraph"></div>
+
         </div>
 
+    </div>
 
-
-        <div class="gallery">   
-        </div>
-        <div id="fullBox" class="fullBox">
-            <span class="close">&times;</span>
-            <img id="fullBox-img" src="" alt="Full-size">
-        </div>
-
-
-        <div class="cust-review">
-            <div class="review">  
-                <img src="Images/Facebook.png" loading="lazy"  class="img-customer">
-                <p class="customer-name">Customer A :</p>
-                <div id="review-a" class="review-paragraph"></div>
-            </div>
-            <div class="review">  
-                <img src="Images/Instagram.png" loading="lazy"  class="img-customer">
-                <p class="customer-name">Customer B :</p>
-                <div id="review-b" class="review-paragraph"></div>
-            </div>
-            <div class="review">  
-                <img src="Images/twitter.png" loading="lazy"  class="img-customer">
-                <p class="customer-name">Customer C :</p>
-                <div id="review-c" class="review-paragraph"></div>
-            </div>
-        </div>
+</section>
 
     
-        <div class="travel-tip">
-            <div class="tips">
-                <img src="Images/BestView.jpg" loading="lazy"  class="tips-mg">
-                <div class="tips-text">
-                    <p id="tip-a" class="trip-p"></p>
-                </div>
-            </div>
-            <div class="tips">
-                <div class="tips-text">
-                    <p id="tip-b" class="trip-p"></p>
-                </div>
-                <img src="Images/Beach01.jpg" loading="lazy"  class="tips-mg">
-            </div>
+<section class="travel-tip">
+
+    <!-- HEADER -->
+
+    <div class="tips-header">
+
+        <h2 class="tips-title">
+            Travel Tips & Discoveries
+        </h2>
+
+        <p class="tips-subtitle">
+            Learn more about Sainte-Marie’s culture,
+            nature, beaches, and unforgettable adventures.
+        </p>
+
+    </div>
+
+    <!-- TIP 1 -->
+
+    <div class="tips">
+
+        <div class="tips-image-box">
+            <img src="Images/BestView.jpg"
+            loading="lazy"
+            class="tips-img">
         </div>
+
+        <div class="tips-text">
+
+            <span class="tips-badge">
+                Nature & Culture
+            </span>
+
+            <p id="tip-a" class="trip-p"></p>
+
+        </div>
+
+    </div>
+
+    <!-- TIP 2 -->
+
+    <div class="tips reverse">
+
+        <div class="tips-image-box">
+            <img src="Images/Beach01.jpg"
+            loading="lazy"
+            class="tips-img">
+        </div>
+
+        <div class="tips-text">
+
+            <span class="tips-badge">
+                Adventure & Ocean
+            </span>
+
+            <p id="tip-b" class="trip-p"></p>
+
+        </div>
+
+    </div>
+
+</section>
 
 
         <div class="contact-section">
