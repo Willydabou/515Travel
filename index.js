@@ -133,12 +133,15 @@ scrollHotel.addEventListener("wheel", (e) => {
 
 
 //--------------------- SUBMIT --------------
-const Submit= () =>{
-  document.getElementById("name").value="";
-  document.getElementById("phone").value="";
-  document.getElementById("email").value="";
-  document.getElementById("subject").value="";
-  document.getElementById("message").value="";
+const Submit = () => {
+
+  document.getElementById("name").value = "";
+  document.getElementById("phone").value = "";
+  document.getElementById("email").value = "";
+  document.getElementById("subject").value = "";
+  document.getElementById("message").value = "";
+
+  alert("Message sent successfully!");
 }
 
 

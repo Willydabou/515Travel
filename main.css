@@ -1656,408 +1656,489 @@ body{
     }
 }
 
-/* ========================================================================== 
-=============================================================================*/
- 
 
+/* ================= CONTACT SECTION ================= */
 
+.contact-section{
 
-/*---------------------------------------
-        Popular Places
-----------------------------------------*/
-
-
-/*---------------------------------------
-        SOCIAL MEDIA
-----------------------------------------*/
-
-
-
-/* -------------------------------------
-GALLERY
----------------------------------------*/
-
-
-
-  /*-------------------------------------
-        CUSTOMER REVIEW
-  ---------------------------------------*/
-
- 
-
-  
-  /*---------------------------------------
-        TRAVEL TIPS
-  -----------------------------------------*/
-  
-
-
-/*------------------------------------------
-    CONTACT SECTION
--------------------------------------------*/
-/*.contact-section{
-    background-color: rgb(51, 107, 228);
-    width: 70%;
-    margin: auto;
-    margin-bottom: 30px;
-    border-radius: 5px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    padding: 2% 5%;
-}
-.details{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-.details input{
-    font-size: 20px;
-    padding: 7px 15px;
-    margin: 20px 0px;
-    border-radius: 4px;
-    color: rgb(26, 25, 25);
-    outline: none;
-}
-#name, #email{
-    margin-right: 5%;
-}
-.message textarea{
     width: 100%;
-    height: 150px;
-    font-size: 20px;
-    padding: 5px 10px;
-    margin: 20px 0px;
-    border-radius: 5px;
-    color: rgb(26, 25, 25);
-    resize: none;
-    outline: none;
-    box-sizing: border-box;
+
+    padding: 100px 7%;
+
+    background:
+    linear-gradient(
+        135deg,
+        rgb(51, 107, 228),
+        rgb(24, 66, 160)
+    );
 }
-.submit-btn{
-    color: rgb(51, 107, 228);
-    background-color: white;
-    padding: 10px 25px;
-    font-size: 24px;
-    margin-bottom: 20px;
-    border-radius: 5px;
+
+/* ---------- HEADER ---------- */
+
+.contact-header{
+
+    text-align: center;
+
+    margin-bottom: 60px;
 }
-.submit-btn:hover{
-    cursor: pointer;
+
+.contact-title{
+
     color: white;
-    background-color: rgb(99, 147, 250);
+
+    font-size: 2.7rem;
+    font-weight: 800;
+
+    margin-bottom: 18px;
 }
 
-/*--------------------------------------------
-        FOOTER
-----------------------------------------------*/
-.footer{
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 150px;
-    background-color: rgb(51, 107, 228);
-    margin-top: 50px;
-}
-.footer-contents{
-    width: 40%;
+.contact-subtitle{
+
+    max-width: 700px;
+
     margin: auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 10px;
-    align-items: center;
+
+    color: rgba(255,255,255,0.88);
+
+    font-size: 1.1rem;
+
+    line-height: 1.8;
 }
 
-.phone-number, .whatsapp, .email-contact, .linkedin-contact{
-    font-size: 16px;
-    font-weight: bold;
-    margin: 10px 5px;
-    text-align: left;
+/* ================= FORM ================= */
+
+.contact-form{
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    background: rgba(255,255,255,0.12);
+
+    border: 1px solid rgba(255,255,255,0.15);
+
+    backdrop-filter: blur(10px);
+
+    border-radius: 30px;
+
+    padding: 50px;
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,0.15);
 }
-.email-contact, .linkedin-contact{
-    text-align: right;
+
+/* ================= DETAILS ================= */
+
+.details{
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 25px;
+
+    margin-bottom: 25px;
 }
-.footer-col img{
-    width: 20px;
-    height: 20px;
-    border-radius: 10px;
-    margin-right: 5px;
+
+/* ---------- INPUT BOX ---------- */
+
+.input-box{
+
+    width: 100%;
 }
-.footer-col p{
-    display: inline-block;
+
+/* ---------- INPUT ---------- */
+
+.details input,
+.message textarea{
+
+    width: 100%;
+
+    background: rgba(255,255,255,0.15);
+
+    border: 1px solid rgba(255,255,255,0.2);
+
+    border-radius: 16px;
+
+    padding: 18px 20px;
+
+    color: white;
+
+    font-size: 1rem;
+
+    outline: none;
+
+    transition: 0.3s ease;
 }
-.footer-copy{
+
+/* ---------- PLACEHOLDER ---------- */
+
+.details input::placeholder,
+.message textarea::placeholder{
+
+    color: rgba(255,255,255,0.75);
+}
+
+/* ---------- FOCUS ---------- */
+
+.details input:focus,
+.message textarea:focus{
+
+    border-color: rgba(255,255,255,0.7);
+
+    background: rgba(255,255,255,0.2);
+
+    box-shadow:
+    0 0 0 4px rgba(255,255,255,0.1);
+}
+
+/* ================= TEXTAREA ================= */
+
+.message textarea{
+
+    min-height: 180px;
+
+    resize: none;
+
+    margin-bottom: 35px;
+
+    line-height: 1.7;
+}
+
+/* ================= BUTTON ================= */
+
+.submition-btn{
+
     text-align: center;
 }
-.travel-t{
-    font-size: 14px;
-    margin: 10px 0px;
+
+.submit-btn{
+
+    background: white;
+
+    color: rgb(51, 107, 228);
+
+    border: none;
+
+    padding: 16px 45px;
+
+    border-radius: 50px;
+
+    font-size: 1rem;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.35s ease;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,0.15);
 }
-.linkedin-contact img{
-    border: 1px solid white;
+
+/* hover */
+
+.submit-btn:hover{
+
+    transform:
+    translateY(-5px)
+    scale(1.03);
+
+    background: rgb(230, 240, 255);
+
+    box-shadow:
+    0 18px 35px rgba(0,0,0,0.25);
 }
 
+/* ================= TABLET ================= */
 
+@media(max-width: 992px){
 
-
-
-
-/*-----------------------------------------
-        MEDIA QUAERY
---------------------------------------------*/
-@media (max-width:1600px){
-    .gallery{
-        width: 83%;
-    }   
-    .img-gallery img{
-        height:300px;
+    .contact-title{
+        font-size: 2.2rem;
     }
-    .cust-review{
-        width: 83%;
+
+    .contact-form{
+        padding: 40px;
     }
-    .review-paragraph{
-        font-size: 16px;
-    }
-    .travel-tip{
-        width: 82.5%;
-    }
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width: 768px){
+
     .contact-section{
-        width: 72.5%;
+        padding: 80px 5%;
     }
-   
-}
 
-@media (max-width:1200px) {
-    .left-side-nav{
-        margin-left: 60px;
-    }
-    .right-side-nav{
-        margin-right: 60px;
-    }
-    .popular{
-        width: 90%;
-    }
-    .hotels{
-        grid-auto-columns: 48%;
-    }
-    .btn-book{
-        font-size: 18px;
-    }
-    .social-media{
-        width: 80%;
-    }
-    .gallery{
-        width: 90%;
-    }
-    .img-gallery img{
-        height: 230px;
-    }
-    .cust-review{
-        width: 90%;
-    }
-    .review p{
-        font-size: 22px;
-    }
-    .travel-tip{
-        width: 90%;
-    }
-    
-    .trip-p{
-        font-size: 16px;
-        line-height: 30px;
-    }
-    .contact-section{
-        width: 80%;
-    }
-    .footer-contents{
-        width: 55%;
-    }
-}
-@media (max-width:850px) {
-    .navbar{
-        grid-template-columns: 2fr 1fr;
-    }
-    .menu-icon{
-        display: block;
-    }
-    .left-side-nav{
-        margin-left: 20px;
-    }
-    .right-side-nav{
-        display: none;
-        background-color: rgb(93, 145, 241);
-        position: fixed;
-        top: 45px;
-        right: 38px;
-        z-index: 1100;
-        flex-direction: column;
-        text-align: left;
-        margin-right: 20px;
-        width: 180px;
-        border-radius: 5px;
-    }
-    .nav-menu{
-        margin: 10px 35px;
-    }
-    .logo-img{
-        width: 40px;
-        height: 40px;
-        border-radius: 3px;
-    }
-    .left-side-nav p{
-        font-size: 20px;
-    }
-    .nav-menu p{
-        font-size: 18px;
-    }
-    .top-image-slider{
-        height: 500px;
-    }
-    .slide-title p{
-        font-size: 20px;
-    }
-    .btn{
-        padding: 5px 10px;
-    }
-    .popular{
-        width: 95%;
-    }
-    .hotel-name{
-        font-size: 20px;
-    }
-    .slide-places{
-        height: 400px;
-    }
-    .slide-places img{
-        height: 200px;
-    }
-   
-    .follow-title{
-        font-size: 22px;
-    }
-    .gallery{
-        width: 93%;
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-    .cust-review{
-        width: 95%;
-        grid-template-columns: 1fr 1fr;
-    }
-    .travel-tip{
-        width: 94%;
-    }
-    .contact-section{
-        width: 88%;
-        padding: 2% 3%;
-    }
-    .submit-btn{
-        padding: 5px 10px;
-        font-size: 20px;
-    }
     .details{
-        padding: 1% 6%;
+
+        grid-template-columns: 1fr;
     }
-    .message{
-        padding: 1% 6%;
+
+    .contact-title{
+        font-size: 1.9rem;
     }
-    .details input, .message textarea{
-        font-size: 16px;
+
+    .contact-subtitle{
+        font-size: 1rem;
     }
+
+    .contact-form{
+        padding: 30px 25px;
+    }
+}
+
+/* ================= SMALL MOBILE ================= */
+
+@media(max-width: 480px){
+
+    .contact-title{
+        font-size: 1.6rem;
+    }
+
+    .contact-subtitle{
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+
+    .details input,
     .message textarea{
-        height: 100px;
+
+        padding: 16px;
     }
-    .footer-contents{
-        width: 65%;
-       }
-    .phone-number, .whatsapp, .email-contact, .linkedin-contact{
-        font-size: 14px;
-    }
-    .footer-col img{
-        width: 15px;
-        height: 15px;
-    }
-    .travel-t{
-        font-size: 16px;
+
+    .submit-btn{
+
+        width: 100%;
     }
 }
-@media (max-width:650px) {
-    .menu-icon{
-        right: 25px;
+
+/* ================= FOOTER ================= */
+
+.footer{
+
+    width: 100%;
+
+    background:
+    linear-gradient(
+        135deg,
+        rgb(24, 66, 160),
+        rgb(51, 107, 228)
+    );
+
+    padding:
+    80px 7% 30px;
+
+    margin-top: 80px;
+}
+
+/* ================= TOP ================= */
+
+.footer-top{
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: flex-start;
+
+    gap: 60px;
+
+    margin-bottom: 40px;
+}
+
+/* ================= BRAND ================= */
+
+.footer-brand{
+
+    flex: 1;
+}
+
+/* ---------- LOGO ---------- */
+
+.footer-logo{
+
+    color: white;
+
+    font-size: 2.3rem;
+    font-weight: 800;
+
+    margin-bottom: 20px;
+}
+
+/* ---------- DESCRIPTION ---------- */
+
+.footer-description{
+
+    max-width: 450px;
+
+    color: rgba(255,255,255,0.85);
+
+    line-height: 1.9;
+
+    font-size: 1rem;
+}
+
+/* ================= CONTACT ================= */
+
+.footer-contact{
+
+    flex: 1;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+/* ================= ITEM ================= */
+
+.footer-item{
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    color: white;
+
+    transition: 0.3s ease;
+}
+
+/* hover */
+
+.footer-item:hover{
+
+    transform: translateX(6px);
+}
+
+/* ---------- ICON ---------- */
+
+.footer-item img{
+
+    width: 22px;
+    height: 22px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    background: white;
+
+    padding: 3px;
+}
+
+/* ---------- TEXT ---------- */
+
+.footer-item p{
+
+    color: rgba(255,255,255,0.92);
+
+    font-size: 1rem;
+
+    font-weight: 500;
+}
+
+/* ---------- LINKEDIN ---------- */
+
+.linkedin-item{
+
+    cursor: pointer;
+}
+
+/* ================= DIVIDER ================= */
+
+.footer-divider{
+
+    width: 100%;
+    height: 1px;
+
+    background:
+    rgba(255,255,255,0.15);
+
+    margin-bottom: 25px;
+}
+
+/* ================= BOTTOM ================= */
+
+.footer-bottom{
+
+    text-align: center;
+}
+
+.travel-t{
+
+    color: rgba(255,255,255,0.75);
+
+    font-size: 0.95rem;
+
+    letter-spacing: 0.5px;
+}
+
+/* ================= TABLET ================= */
+
+@media(max-width: 992px){
+
+    .footer-top{
+
+        flex-direction: column;
+
+        gap: 40px;
     }
-    .top-image-slider{
-        height: 350px;
-    }
-    .hotels{
-        grid-auto-columns: 85%;
-    }
-    .btn-book{
-        font-size: 16px;
-        padding: 5px 7px;
-    }
-    .top-image-slider{
-        height: 500;
-    }
-    .icons{
-        width: 35px;
-        height: 35px;
-    }
-    .slide-places img{
-        height: 200px;
-        border-radius: 3px;
-    }
-    .icon-img{
-        width: 35px;
-        height: 35px;
-    }
-    .gallery{
-        width: 97%;
-    }
-    .img-gallery img{
-        height: 150px;
-    }
-    .cust-review{
-        width: 97%;
-        grid-template-columns: 1fr;
-    }
-    .review{
-        height: 290px;
-    }
-    .travel-tip{
-        width: 96%;
-    }
-    .trip-title{
-        font-size: 20px;
-    }
-    .contact-section{
-        width: 91%;
-    }
-    #name, #email{
-        margin-right: 0;
-    }
-    .details{
-        grid-template-columns: 1fr;
-    }
-    .footer-contents{
-        column-gap: 5px;
-    }
-    .footer-contents{
-        width: 85%;
-       }
-    .phone-number, .whatsapp, .email-contact, .linkedin-contact{
-        font-size: 12px;
-    }
-    .footer-col img{
-        width: 12px;
-        height: 12px;
-    }
-    .travel-t{
-        font-size: 12px;
+
+    .footer-logo{
+        font-size: 2rem;
     }
 }
-@media (max-width:400px) {
-    .footer-contents{
-        width: 95%;
+
+/* ================= MOBILE ================= */
+
+@media(max-width: 768px){
+
+    .footer{
+
+        padding:
+        70px 5% 25px;
     }
-    .phone-number, .whatsapp, .email-contact, .linkedin-contact{
-        font-size: 10px;
+
+    .footer-logo{
+        font-size: 1.8rem;
+    }
+
+    .footer-description{
+
+        font-size: 0.97rem;
+
+        line-height: 1.8;
+    }
+
+    .footer-item{
+
+        gap: 12px;
+    }
+
+    .footer-item p{
+
+        font-size: 0.95rem;
+    }
+}
+
+/* ================= SMALL MOBILE ================= */
+
+@media(max-width: 480px){
+
+    .footer-logo{
+        font-size: 1.6rem;
+    }
+
+    .footer-description{
+
+        font-size: 0.92rem;
+    }
+
+    .travel-t{
+
+        font-size: 0.85rem;
     }
 }
